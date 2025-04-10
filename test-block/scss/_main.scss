@@ -1,0 +1,62 @@
+main{
+    margin-block-start: toRem(188);
+    
+}
+
+// ----------------------------------------------------------------//
+
+// hero section
+
+.hero{
+    
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        gap: toRem(30);
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: toRem(90);
+        max-width: toRem(392);
+        justify-content: start;
+    }
+    &__label{
+        color: $titleColor;
+        text-transform: uppercase;
+
+    }
+    &__title{
+        font-size: toRem(64);
+        font-weight: 700;
+        letter-spacing: toRem(13.76);
+    }
+    &__subtitle{
+        font-weight: 500;
+        font-size: toRem(29);
+        letter-spacing: toRem(6.235);
+    }
+    &__paragraph{
+        // letter-spacing: toRem(1)
+        margin-block-start: toRem(-25);
+        font-size: toRem(14);
+        line-height: toRem(20.9);
+        
+    }
+    &__link{
+        color: $titleColor;
+        font-weight: 600;
+        font-size: toRem(20);
+        border-radius: toRem(10);
+        background-color: $buttonColor;
+        padding: toRem(20);
+        max-width: toRem(190);
+        text-align: center;
+    }
+    
+
+    // стили для второй части херо секции
+
+
+}
+// ----------------------------------------------------------------//

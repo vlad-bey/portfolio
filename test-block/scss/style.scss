@@ -1,0 +1,50 @@
+@use "sass:math";
+
+@import "_reset.scss";
+
+@import "_fonts.scss";
+
+@import "_mixins.scss";
+
+@import "_variable.scss";
+
+@import "_header.scss";
+
+@import "_main.scss";
+
+@import "_footer.scss";
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,regular,500,600,700&display=swap");
+
+body{
+	font-family: 'Poppins', sans-serif;
+	font-size: toRem(12); /* 12/16 */
+	color: $textColor;
+	background-color: $mainBcColor;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+
+	// для хедера то что ниже
+	position: relative;
+}
+
+main {
+	flex-grow: 1;
+}
+
+[class*="__container"] {
+	max-width: toRem(1203); /* 1270/16 */
+	margin: 0 auto;
+	padding: toRem(15); /* 15/16 */
+}
+
+// -------------------------------------------------------------//
+
+
