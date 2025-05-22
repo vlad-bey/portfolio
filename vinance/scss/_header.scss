@@ -1,0 +1,219 @@
+.header {
+	// Прописывание стилей для меню бургер
+	position: fixed;
+	inline-size: 100%;
+	inset-inline-start: 0;
+	inset-block-start: 0;
+	z-index: 50;
+	// -------------------//
+
+	// .header__container
+
+	&__container {
+		display: flex;
+		gap: toRem(60); /* 15/16 */
+		align-items: center;
+		@media (max-width: toEm(750)) {
+			gap: toRem(15);
+		}
+	}
+
+	// .header__logo
+
+	&__logo {
+		position: relative;
+		z-index: 5;
+		// inline-size: toRem(115);
+	}
+
+	// .header__menu
+
+	&__menu {
+	}
+
+	// .header__actions
+
+	&__actions {
+		// Прописывание стилей для меню бургер
+		position: relative;
+		z-index: 5;
+		// -------------------//
+
+		justify-self: end;
+
+		// Прописывание стилей для меню бургер
+		@media (max-width: toEm(750)) {
+		}
+	}
+}
+
+.menu {
+	// Прописывание стилей для меню бургер
+	@media (max-width: toEm(675)) {
+		padding: toRem(135) toRem(15) toRem(30) toRem(15);
+		background-color: var(--main-bg-color);
+		position: fixed;
+		inline-size: 100%;
+		block-size: 100%;
+		// вот этот inset-inline-start: -100% варирование знака перед значением влияет на то откуда появиться меню бургер (-100% будет выезжать слева, 100% — справа)
+		inset-inline-start: -100%;
+		inset-block-start: 0;
+		z-index: 2;
+		overflow: auto;
+		transition: inset-inline-start 0.5s;
+
+		&-open{
+			overflow: hidden;
+		}
+		
+		.menu-open & {
+			inset-inline-start: 0%;
+		}
+
+		&::before {
+			content: "";
+			block-size: toRem(65);
+			inline-size: 100%;
+			position: fixed;
+			inset-inline-start: -100%;
+			inset-block-start: 0;
+			transition: inset-inline-start 0.8s;
+			background-color: var(--main-bg-color);
+		}
+	}
+	// -------------------//
+
+	// .menu__body
+	&__body {
+	}
+
+	// .menu__list
+	&__list {
+		display: flex;
+		gap: toRem(30); /* 15/16 */
+		flex-wrap: wrap;
+
+		// Прописывание стилей для меню бургер
+		@media (max-width: toEm(675)) {
+			flex-direction: column;
+			align-items: flex-end;
+			row-gap: toRem(20);
+		}
+
+		// -------------------//
+	}
+
+	// .menu__item
+
+	&__item {
+	}
+
+	// .menu__link
+
+	&__link {
+		text-underline-offset: 0rem;
+		text-decoration: underline toRem(2) rgba(255, 255, 255, 0);
+		transition:
+			text-decoration 0.3s,
+			color 0.3s,
+			text-underline-offset 0.3s;
+
+		&:hover {
+			color: var(--statistic-color);
+			text-decoration: underline toRem(2) var(--statistic-color);
+			text-underline-offset: toRem(8);
+		}
+
+		// Прописывание стилей для меню бургер
+		@media (max-width: toEm(675)) {
+			font-size: toRem(25);
+		}
+		// -------------------//
+	}
+}
+
+// Кнопка меню бургер
+.icon-menu {
+	display: none;
+	// Прописывание стилей для меню бургер
+	@media (max-width: toEm(675)) {
+		display: block;
+		inline-size: toRem(30);
+		block-size: toRem(18);
+		position: relative;
+		z-index: 2;
+		&::before,
+		&::after,
+		span {
+			content: "";
+			position: absolute;
+			block-size: toRem(2);
+			inline-size: 100%;
+			inset-inline-end: 0;
+			background-color: var(--white-color);
+			// анимация для линий при открытии меню бургер (типо анимация трансформации линии в крестик)
+			transition: all 0.3s;
+		}
+		&::before {
+			inset-block-start: 0;
+			// здесь мы меняем положение линии при открытии меню бургер (типо анимация трансформации линии в крестик)
+			.menu-open & {
+				inset-block-start: 50%;
+				transform: translateY(-50%) rotate(-45deg);
+			}
+		}
+		&::after {
+			inset-block-end: 0;
+			inline-size: 50%;
+			// здесь мы меняем положение линии при открытии меню бургер (типо анимация трансформации линии в крестик)
+			.menu-open & {
+				inset-block-end: 50%;
+				inline-size: 100%;
+				transform: translateY(50%) rotate(45deg);
+			}
+		}
+		span {
+			inset-block-start: 50%;
+			transform: translateY(-50%);
+			// здесь мы меняем положение линии при открытии меню бургер (типо анимация трансформации линии в крестик)
+			.menu-open & {
+				// inline-size: 0; нужен для того чтобы центральная линия исчезла при открытии меню бургер (то есть чтобы она не была видна, если нее убрать то она будет видна при открытии меню бургер)
+				inline-size: 0;
+			}
+		}
+	}
+}
+// -------------------//
+
+.actions-header {
+	display: flex;
+	gap: toRem(10);
+	flex-wrap: wrap;
+	align-items: center;
+	margin-left: auto;
+
+	// .actions-header__link
+
+	&__link {
+		color: var(--header-button-color);
+		background-color: var(--white-color);
+		border: toRem(1) solid var(--border-color);
+		transition:
+			color 0.3s,
+			background-color 0.3s;
+
+		&:hover {
+			color: var(--color-header-color);
+			background-color: var(--hero-bg-label-color);
+		}
+		@media (max-width: toEm(450)) {
+			padding-inline: toRem(10);
+		}
+	}
+
+	// .actions-header__item
+
+	&__item {
+		// color: var(--white-color);
+	}
+}

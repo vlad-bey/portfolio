@@ -1,0 +1,11 @@
+.button{
+   padding: toRem(14) toRem(20);
+   border-radius: toRem(4);
+   line-height: 1;
+
+   border: toRem(1) solid var(--color-border);
+
+   @media (max-width: toEm(770)){
+      font-size: clamp(0.875rem, 0.7861rem + 0.4444vw, 1rem);
+}
+}

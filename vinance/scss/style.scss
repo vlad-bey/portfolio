@@ -1,0 +1,84 @@
+@use "sass:math";
+
+// Подключение обнуляющих стилей
+@import "_reset.scss";
+
+// Подключение шрифтов
+@import "_fonts.scss";
+
+// Подключение миксинов
+@import "_mixins.scss";
+
+// Подключение переменных
+@import "variable.scss";
+
+// Компаоненти
+@import "_components.scss";
+// Подключение хедера
+@import "_header.scss";
+// Подключение мeйна
+@import "_main.scss";
+// Подключение футера
+@import "_footer.scss";
+
+/* Google fonts (plugin)*/
+@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto%20Mono:wght@400&display=swap");
+
+// Основні стилі
+body {
+	font-family: "Inter Tight", sans-serif;
+	background-color: var(--main-bg-color);
+	color: var(--color-header-color);
+
+	// делаем для того чтобы плавно появлялся контент на странице при ее загрузке
+	// opacity: 0;
+	// transition: opacity 1.5s;
+
+	// .loaded & {
+	// 	opacity: 1;
+	// }
+	// -------------------//
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+}
+
+.wrapper > main {
+	flex-grow: 1;
+}
+
+// [class*="__container"] {
+// 	// &:not(.header__container), &:not(.hero__container) {
+// 	// 	max-width: toRem(1270); /* 1270/16 */
+// 	// 	// margin: 0 auto;
+// 	// 	padding: toRem(15);
+// 	// }
+// 	// &:not(.hero__container) {
+// 	// 	max-width: toRem(1382); /* 1270/16 */
+// 	// margin: 0 auto;
+// 	// padding: toRem(30) toRem(15); /* 15/16 */
+// 	// }
+
+// }
+[class*="__container"] {
+	margin: 0 auto; /* Общее центрирование для всех контейнеров */
+
+	/* Контейнер 1382px (только для header) */
+	&.header__container {
+		max-width: toRem(1382);
+		padding: toRem(30) toRem(15);
+	}
+
+	/* Контейнер 1270px (для всех остальных, кроме hero если нужно) */
+	&:not(.header__container) {
+		max-width: toRem(1270);
+		padding: toRem(15);
+	}
+}
+
+// -------------------------------------------------------------//

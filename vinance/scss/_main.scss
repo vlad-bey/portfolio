@@ -1,0 +1,398 @@
+// main {
+// }
+
+// // ----------------------------------------------------------------//
+
+// // hero section
+// .hero {
+// 	// самый первый медиазпрос для данного случая ибо без него не будет всего того что необходимо
+// 	@media (min-width: toEm(770)) {
+// 		display: flex;
+// 		align-items: center;
+// 	}
+// 	@media (max-width: toEm(770)) {
+// 		display: flex;
+// 		flex-direction: column;
+// 		gap: toRem(30);
+// 	}
+// 	// .hero__content
+// 	&__content {
+// 		display: flex;
+// 		flex-direction: column;
+// 		gap: toRem(180);
+// 		@media (min-width: toEm(770)) and (max-width: toEm(1270)) {
+// 			gap: clamp(2.5rem, -10.975rem + 28vw, 11.25rem);
+// 		}
+// 		@media (max-width: toEm(770)){
+// 			gap: clamp(3.75rem, -1.5833rem + 26.6667vw, 11.25rem);
+// 		}
+// 		// это нужно для того чтобы контент занял всю ширину екрана и изображение уйдет вбок за пределы экрана
+// 		flex: 0 0 100%;
+// 	}
+
+// 	&__content-inner {
+// 		& > *:not(:last-child) {
+// 			margin-block-end: toRem(20);
+// 		}
+// 	}
+
+// 	// .hero__container
+// 	&__container {
+// 		// контейнерные стили указаны в style.scss
+// 		// в конкретном случае я отпозиционировал контент по центру потому так в макете но в теории можно позиционировать его падингами (потом я так и решил переделать, посмотрим что будет 12.05.2025)
+// 		display: flex;
+// 		align-items: center;
+// 		background-color: #fff;
+// 	}
+
+// 	// .hero__body
+// 	&__body {
+// 		// display: flex;
+// 		// flex-direction: column;
+// 		// gap: clamp(2.5rem, -10.8424rem + 27.8330vw, 11.25rem);
+// 		// это делается для того чтобы контент не уходил под изображение (уходит потом в медиазапрос) и опять же 50% только в том случае если изображение и контент занимают 50% экрана каждый
+// 		// width: 50%;
+// 		// по необходимости нужно добавить падинги
+// 		padding: toRem(150) toRem(0) toRem(0) toRem(0);
+// 		@media (min-width: toEm(770)) {
+// 			width: 60%;
+// 			padding: toRem(167) toRem(78) toRem(110) toRem(0);
+// 		}
+// 	}
+
+// 	// .hero__name-label
+// 	&__name-label {
+// 		display: inline-block;
+// 		font-size: toRem(12);
+// 		line-height: 1;
+// 		text-transform: uppercase;
+
+// 		padding: toRem(10);
+// 		background-color: var(--hero-bg-label-color);
+// 		border: toRem(1) solid var(--border-hero-color);
+// 		color: var(--white-color);
+// 		border-radius: toRem(4);
+// 	}
+
+// 	// .hero__title
+// 	&__title {
+// 		font-size: clamp(2rem, 1.3715rem + 2.6816vw, 3.5rem);
+// 		font-weight: 500;
+// 		line-height: 1.2;
+// 		color: var(--white-color);
+// 	}
+
+// 	// .hero__text
+// 	&__text {
+// 		color: var(--color-header-color);
+// 		font-size: toRem(20);
+// 		font-weight: 500;
+// 		line-height: 1.4;
+// 		max-width: toRem(600);
+// 		@media (min-width: toEm(770.98)) and (max-width: toEm(1270)) {
+// 			font-size: clamp(0.875rem, 0.2975rem + 1.2vw, 1.25rem);
+// 		}
+// 		@media (max-width: toEm(770)) {
+// 			font-size: clamp(0.875rem, 0.6083rem + 1.3333vw, 1.25rem);
+// 		}
+// 	}
+
+// 	// .hero__buttons
+// 	&__buttons {
+// 		display: flex;
+// 		flex-wrap: wrap;
+// 		gap: toRem(20);
+// 	}
+
+// 	// .hero__button
+// 	&__button-link {
+// 		color: var(--header-button-color);
+// 		line-height: 1;
+// 		background-color: var(--button-yellow-color);
+// 	}
+
+// 	// .hero__button-tel
+// 	&__button-tel {
+// 		color: var(--white-color);
+// 		background-color: var(--hero-bg-label-color);
+// 		border: toRem(1) solid var(--border-hero-color);
+// 	}
+
+// 	// .hero__statistics-list
+// 	&__statistics-list {
+// 		display: flex;
+// 		gap: clamp(1rem, -3.235rem + 8.8vw, 3.75rem);
+// 		justify-content: space-between;
+// 		border-top: toRem(1) solid var(--border-hero-color);
+// 		padding-block-start: toRem(30);
+
+// 		@media (min-width: toEm(770)) and (max-width: toEm(1270)) {
+// 		}
+// 	}
+
+// 	// .hero__statistics-item
+// 	&__statistics-item {
+// 		display: flex;
+// 		flex-direction: column;
+// 		gap: toRem(10);
+
+// 	}
+
+// 	// .hero__statistics-number
+// 	&__statistics-number {
+// 		font-size: toRem(56);
+// 		font-weight: 500;
+// 		line-height: 1.2;
+// 		color: var(--statistic-color);
+// 		@media (min-width: toEm(770)) and (max-width: toEm(1270)) {
+// 			font-size: clamp(2rem, 1.3715rem + 2.6816vw, 3.5rem);
+// 		}
+// 		@media (max-width: toEm(770)) {
+// 			font-size: clamp(2.25rem, 1.3611rem + 4.4444vw, 3.5rem);
+// 		}
+// 	}
+
+// 	// .hero__statistics-text
+// 	&__statistics-text {
+// 		font-size: toRem(20);
+// 		line-height: 1.4;
+// 		color: var(--color-header-color);
+// 		@media (min-width: toEm(770)) and (max-width: toEm(1270)) {
+// 			font-size: clamp(0.875rem, 0.2975rem + 1.2vw, 1.25rem);
+// 		}
+// 		@media (max-width: toEm(770)){
+// 			font-size: clamp(0.875rem, 0.6083rem + 1.3333vw, 1.25rem);
+// 		}
+// 	}
+
+// 	&__image {
+// 		text-align: center;
+// 		// этот медиа-запрос нужен для того чтобы вернуть изображение на видимую часть экрана
+// 		@media (min-width: toEm(770)) {
+// 			// позиционирование необходимо для саого изображения
+// 			position: relative;
+// 			// 50% нужно для того чтобы изображение заняло половину видимого экрана
+// 			flex: 0 0 40%;
+// 			// padding делается для того чтобы изображение приняло свою высоту 55.293%
+// 			padding: toRem(0) toRem(0) 77.32% toRem(0);
+// 			// транслейт необходим для того чтобы изображение вернулось во вьюпорт (потому что на .hero__content у нас стоит flex: 0 0 100%)
+// 			transform: translate(-100%, 0px);
+// 		}
+// 		@media (min-width: toEm(1270.99)) {
+// 			// этот медиа-запрос нужен для того если вдруг изображение и контент занимают не по 50% экрана каждый (и там еще в моменте отнимаем сумму отступов у контейнера)
+// 			flex: 0 0 calc(50vw - (0.6 - 0.5) * toRem(1240));
+// 		}
+// 		// это нужно для того чтобы изображение заняло всю ширину екрана
+// 		img {
+// 			// это нужно для того чтобы изображение заняло всю ширину своего родителя
+// 			max-width: 100%;
+// 			@media (min-width: toEm(770)) {
+// 				// это нужно для того чтобы изображение встало как необходимо
+// 				position: absolute;
+// 				width: 100%;
+// 				height: 100%;
+// 				inset-block-start: 0;
+// 				inset-inline-end: 0;
+// 				object-fit: cover;
+// 			}
+// 		}
+// 	}
+// }
+.main {
+	// .main__hero
+
+	&__hero {
+	}
+}
+.hero {
+	@media (min-width: toEm(770)) {
+		display: flex;
+	}
+	// .hero__content
+
+	&__content {
+		flex: 0 0 100%;
+		display: flex;
+	}
+
+	// .hero__container
+
+	&__container {
+		display: flex;
+		align-items: center;
+	}
+
+	// .hero__body
+
+	&__body {
+		padding: toRem(20) toRem(0) toRem(0) toRem(0);
+		@media (min-width: toEm(770)) {
+			width: 60%;
+			padding: toRem(20) toRem(18) toRem(0) toRem(0);
+		}
+
+		display: flex;
+		flex-direction: column;
+		gap: toRem(180);
+		@media (min-width: toEm(770)) and (max-width: toEm(1270)) {
+			gap: clamp(2.5rem, -10.975rem + 28vw, 11.25rem);
+		}
+		@media (max-width: toEm(770)) {
+			gap: clamp(3.75rem, -1.5833rem + 26.6667vw, 11.25rem);
+		}
+	}
+
+	// .hero__content-inner
+
+	&__content-inner {
+					& > *:not(:last-child) {
+						margin-block-end: toRem(20);
+					}
+	}
+
+	// .hero__name-label
+
+	&__name-label {
+		display: inline-block;
+		font-size: toRem(12);
+		line-height: 1;
+		text-transform: uppercase;
+
+		padding: toRem(10);
+		background-color: var(--hero-bg-label-color);
+		border: toRem(1) solid var(--border-hero-color);
+		color: var(--white-color);
+		border-radius: toRem(4);
+	}
+
+	// .hero__title
+
+	&__title {
+		font-size: clamp(2rem, 1.3715rem + 2.6816vw, 3.5rem);
+		font-weight: 500;
+		line-height: 1.2;
+		color: var(--white-color);
+	}
+
+	// .hero__text
+
+	&__text {
+		color: var(--color-header-color);
+		font-size: toRem(20);
+		font-weight: 500;
+		line-height: 1.4;
+		max-width: toRem(600);
+		@media (min-width: toEm(770.98)) and (max-width: toEm(1270)) {
+			font-size: clamp(0.875rem, 0.2975rem + 1.2vw, 1.25rem);
+		}
+		@media (max-width: toEm(770)) {
+			font-size: clamp(0.875rem, 0.6083rem + 1.3333vw, 1.25rem);
+		}
+	}
+
+	// .hero__buttons
+
+	&__buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(20);
+	}
+
+	// .hero__button-link
+
+	&__button-link {
+		color: var(--header-button-color);
+		line-height: 1;
+		background-color: var(--button-yellow-color);
+	}
+
+	// .hero__button-tel
+
+	&__button-tel {
+		color: var(--white-color);
+		background-color: var(--hero-bg-label-color);
+		border: toRem(1) solid var(--border-hero-color);
+	}
+
+	// .hero__statistics-list
+
+	&__statistics-list {
+		display: flex;
+		gap: clamp(1rem, -3.235rem + 8.8vw, 3.75rem);
+		justify-content: space-between;
+		border-top: toRem(1) solid var(--border-hero-color);
+		padding-block-start: toRem(30);
+
+		@media (min-width: toEm(770)) and (max-width: toEm(1270)) {
+		}
+	}
+
+	// .hero__statistics-item
+
+	&__statistics-item {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(10);
+	}
+
+	// .hero__statistics-number
+
+	&__statistics-number {
+		font-size: toRem(56);
+		font-weight: 500;
+		line-height: 1.2;
+		color: var(--statistic-color);
+		@media (min-width: toEm(770)) and (max-width: toEm(1270)) {
+			font-size: clamp(2rem, 1.3715rem + 2.6816vw, 3.5rem);
+		}
+		@media (max-width: toEm(770)) {
+			font-size: clamp(2.25rem, 1.3611rem + 4.4444vw, 3.5rem);
+		}
+	}
+
+	// .hero__statistics-text
+
+	&__statistics-text {
+		font-size: toRem(20);
+		line-height: 1.4;
+		color: var(--color-header-color);
+		@media (min-width: toEm(770)) and (max-width: toEm(1270)) {
+			font-size: clamp(0.875rem, 0.2975rem + 1.2vw, 1.25rem);
+		}
+		@media (max-width: toEm(770)) {
+			font-size: clamp(0.875rem, 0.6083rem + 1.3333vw, 1.25rem);
+		}
+	}
+
+	// .hero__image
+
+	&__image {
+		@media (max-width: toEm(770)){
+			text-align: center;
+		}
+		@media (min-width: toEm(770)) {
+			position: relative;
+			// flex: 0 0 40%;
+			flex: 0 0 calc(((100vw - 30px) * 0.4) + 15px);
+			padding: toRem(0) toRem(0) 64.95% toRem(0);
+			transform: translate(-100%, 0px);
+		}
+		@media (min-width: toEm(1270.99)) {
+			// flex: 0 0 calc(100vw - (((100vw - 1270px) / 2)+ ((1270 - 30px) * 0.6) + 15px));
+			flex: 0 0 calc(50vw - (0.6 - 0.5) * (toRem(1270 - 30px)));
+		}
+		& img {
+			max-width: 100%;
+			@media (min-width: toEm(770)) {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				object-fit: cover;
+			}
+		}
+	}
+}
+.button {
+}
